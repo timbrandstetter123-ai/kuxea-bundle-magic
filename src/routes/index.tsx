@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Check, Crown, Package, ShieldCheck, Sparkles, TrendingUp, Truck, Globe2, Zap, Rocket, Gem } from "lucide-react";
+import { Check, Crown, Package, ShieldCheck, Sparkles, TrendingUp, Truck, Globe2, Zap, Rocket } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import logoAsset from "@/assets/kuxeya-logo.png.asset.json";
 
@@ -32,7 +32,6 @@ function Landing() {
       <Stats />
       <Bundles />
       <Inside />
-      <Testimonials />
       <FAQ />
       <Footer />
     </div>
@@ -158,19 +157,95 @@ type Bundle = {
 
 const bundles: Bundle[] = [
   {
-    id: "starter",
-    name: "Starter Pack",
-    tagline: "Your first step into reselling.",
-    price: "14",
+    id: "resell-guide",
+    name: "Resell Guide",
+    tagline: "Just the guide. Pure knowledge.",
+    price: "5",
     priceCents: ",99€",
     icon: Rocket,
     features: [
-      "15+ verified starter suppliers",
-      "Beginner resell guide (EN)",
-      "Basic listing checklist",
+      "Complete reselling guide (EN)",
+      "From sourcing to first sale",
+      "Mindset & pricing basics",
       "Instant digital download",
     ],
-    cta: "Start for 14,99 €",
+    cta: "Get the Guide",
+  },
+  {
+    id: "guide-tracker",
+    name: "1-on-1 Reseller Guide + Profit Tracker",
+    tagline: "The full guide in EN & DE — plus tracking.",
+    price: "9",
+    priceCents: ",96€",
+    icon: TrendingUp,
+    features: [
+      "1:1 reseller guide in English & German",
+      "Step-by-step listing walkthrough",
+      "Free profit tracker (Excel / Sheets)",
+      "Track every flip & every euro",
+      "Instant digital download",
+    ],
+    cta: "Get Guide + Tracker",
+  },
+  {
+    id: "asics-supplier",
+    name: "Asics Supplier",
+    tagline: "Verified sources for Asics sneakers.",
+    price: "8",
+    priceCents: ",99€",
+    icon: Package,
+    features: [
+      "Verified Asics suppliers",
+      "Tested & active sources",
+      "EN & DE sheets",
+      "Instant access",
+    ],
+    cta: "Unlock Asics",
+  },
+  {
+    id: "vintage-supplier",
+    name: "Vintage Supplier",
+    tagline: "Sources for real vintage pieces.",
+    price: "8",
+    priceCents: ",99€",
+    icon: Package,
+    features: [
+      "Verified vintage suppliers",
+      "Tested & active sources",
+      "EN & DE sheets",
+      "Instant access",
+    ],
+    cta: "Unlock Vintage",
+  },
+  {
+    id: "lululemon-supplier",
+    name: "Lululemon Supplier",
+    tagline: "Verified sources for Lululemon.",
+    price: "8",
+    priceCents: ",99€",
+    icon: Package,
+    features: [
+      "Verified Lululemon suppliers",
+      "Tested & active sources",
+      "EN & DE sheets",
+      "Instant access",
+    ],
+    cta: "Unlock Lululemon",
+  },
+  {
+    id: "supplier-vault",
+    name: "Supplier Vault",
+    tagline: "All suppliers in one place. No fluff.",
+    price: "19",
+    priceCents: ",99€",
+    icon: Package,
+    features: [
+      "50+ verified suppliers",
+      "EN & DE supplier sheets",
+      "Lifetime supplier updates",
+      "Instant access",
+    ],
+    cta: "Get the Vault",
   },
   {
     id: "everything",
@@ -187,44 +262,15 @@ const bundles: Bundle[] = [
       "Full resell guides — English & German",
       "1:1 walkthrough: how to list correctly",
       "Free profit tracker (Excel / Sheets)",
-      "Insider tips for maximum margin",
-      "Lifetime updates & new suppliers",
-      "Instant digital download",
-      "Private community access",
-    ],
-    cta: "Unlock for 39,99 €",
-  },
-  {
-    id: "supplier-vault",
-    name: "Supplier Vault",
-    tagline: "Just the suppliers. No fluff.",
-    price: "24",
-    priceCents: ",99€",
-    icon: Package,
-    features: [
-      "60+ verified suppliers",
-      "EN & DE supplier sheets",
-      "Lifetime supplier updates",
-      "Instant access",
-    ],
-    cta: "Get the Vault",
-  },
-  {
-    id: "vip",
-    name: "VIP 1-on-1 Mentorship",
-    tagline: "Direct help. Personal results.",
-    price: "99",
-    priceCents: ",99€",
-    badge: "Premium",
-    icon: Gem,
-    features: [
-      "Everything in the Full Bundle",
       "1:1 chat support with Kuxeya",
       "Personal supplier recommendations",
       "Listing review & feedback",
       "Priority access to new drops",
+      "Insider tips for maximum margin",
+      "Lifetime updates & new suppliers",
+      "Instant digital download",
     ],
-    cta: "Apply for VIP",
+    cta: "Unlock for 39,99 €",
   },
 ];
 
@@ -366,34 +412,6 @@ function Inside() {
   );
 }
 
-function Testimonials() {
-  const reviews = [
-    { name: "Leon M.", text: "Made 5x my money back in 2 weeks. The suppliers are pure gold.", rating: 5 },
-    { name: "Sara K.", text: "No more guessing. The profit tracker alone is worth the price.", rating: 5 },
-    { name: "Marvin B.", text: "Best investment as a beginner. The guides are super easy to follow.", rating: 5 },
-  ];
-  return (
-    <section className="py-28 bg-card/30 border-y border-border">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="text-center mb-16">
-          <p className="text-xs tracking-[0.3em] uppercase text-pink mb-4">Real Resellers</p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold">They <span className="text-pink-silver-gradient italic">made it.</span></h2>
-        </div>
-        <div className="grid md:grid-cols-3 gap-6">
-          {reviews.map((r) => (
-            <div key={r.name} className="p-8 rounded-2xl bg-background border border-border">
-              <div className="flex gap-1 mb-4 text-pink">
-                {Array.from({ length: r.rating }).map((_, i) => <span key={i}>★</span>)}
-              </div>
-              <p className="text-foreground/90 leading-relaxed mb-6">"{r.text}"</p>
-              <div className="text-sm text-muted-foreground">— {r.name}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function FAQ() {
   const faqs = [

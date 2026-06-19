@@ -412,34 +412,6 @@ function Inside() {
   );
 }
 
-function Testimonials() {
-  const reviews = [
-    { name: "Leon M.", text: "Made 5x my money back in 2 weeks. The suppliers are pure gold.", rating: 5 },
-    { name: "Sara K.", text: "No more guessing. The profit tracker alone is worth the price.", rating: 5 },
-    { name: "Marvin B.", text: "Best investment as a beginner. The guides are super easy to follow.", rating: 5 },
-  ];
-  return (
-    <section className="py-28 bg-card/30 border-y border-border">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="text-center mb-16">
-          <p className="text-xs tracking-[0.3em] uppercase text-pink mb-4">Real Resellers</p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold">They <span className="text-pink-silver-gradient italic">made it.</span></h2>
-        </div>
-        <div className="grid md:grid-cols-3 gap-6">
-          {reviews.map((r) => (
-            <div key={r.name} className="p-8 rounded-2xl bg-background border border-border">
-              <div className="flex gap-1 mb-4 text-pink">
-                {Array.from({ length: r.rating }).map((_, i) => <span key={i}>★</span>)}
-              </div>
-              <p className="text-foreground/90 leading-relaxed mb-6">"{r.text}"</p>
-              <div className="text-sm text-muted-foreground">— {r.name}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function FAQ() {
   const faqs = [

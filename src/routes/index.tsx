@@ -1,19 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Check, Crown, Package, ShieldCheck, Sparkles, TrendingUp, Truck, Globe2, Zap } from "lucide-react";
+import { Check, Crown, Package, ShieldCheck, Sparkles, TrendingUp, Truck, Globe2, Zap, Rocket, Gem } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
-import logo from "@/assets/kuxea-logo.png";
+import logoAsset from "@/assets/kuxeya-logo.png.asset.json";
+
+const logo = logoAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Kuxea Reselling — Verified Suppliers, Real Profit." },
+      { title: "Kuxeya Reselling — Verified Suppliers. Real Profit." },
       {
         name: "description",
         content:
-          "Das ultimative Reselling-Bundle: 60+ verifizierte Supplier, Step-by-Step Resell Guides (DE/EN), Listing-Anleitung & Profit Tracker. Von Kuxea.",
+          "The ultimate reselling bundle: 60+ verified suppliers, step-by-step resell guides (EN/DE), listing mastery & a free profit tracker. By Kuxeya.",
       },
-      { property: "og:title", content: "Kuxea Reselling — Verified Suppliers, Real Profit." },
-      { property: "og:description", content: "60+ verifizierte Supplier, Resell Guides, Profit Tracker. Das Komplettpaket für ernsthafte Reseller." },
+      { property: "og:title", content: "Kuxeya Reselling — Verified Suppliers. Real Profit." },
+      { property: "og:description", content: "60+ verified suppliers, resell guides, profit tracker. The complete pack for serious resellers." },
       { property: "og:image", content: heroBg },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: heroBg },
@@ -28,7 +30,7 @@ function Landing() {
       <Nav />
       <Hero />
       <Stats />
-      <Bundle />
+      <Bundles />
       <Inside />
       <Testimonials />
       <FAQ />
@@ -41,22 +43,22 @@ function Nav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/60 border-b border-border">
       <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2">
-          <img src={logo} alt="Kuxea" className="h-8 w-8 object-contain" width={32} height={32} />
-          <span className="font-display text-lg tracking-wide text-gold-gradient animate-shimmer">
-            KUXEA <span className="text-muted-foreground font-sans text-xs tracking-[0.3em] ml-1">RESELLING</span>
+        <a href="#top" className="flex items-center gap-2.5">
+          <img src={logo} alt="Kuxeya Reselling" className="h-9 w-9 object-contain rounded-full" width={36} height={36} />
+          <span className="font-display text-lg tracking-wide text-pink-silver-gradient animate-shimmer font-bold">
+            KUXEYA <span className="text-muted-foreground font-sans text-xs tracking-[0.3em] ml-1 font-normal">RESELLING</span>
           </span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-          <a href="#bundle" className="hover:text-gold transition">Bundle</a>
-          <a href="#inside" className="hover:text-gold transition">Was drin ist</a>
-          <a href="#faq" className="hover:text-gold transition">FAQ</a>
+          <a href="#bundles" className="hover:text-pink transition">Bundles</a>
+          <a href="#inside" className="hover:text-pink transition">What's Inside</a>
+          <a href="#faq" className="hover:text-pink transition">FAQ</a>
         </nav>
         <a
-          href="#bundle"
-          className="bg-gold-gradient text-primary-foreground px-5 py-2 rounded-full text-sm font-semibold hover:shadow-gold-glow transition-all"
+          href="#bundles"
+          className="bg-pink-gradient text-primary-foreground px-5 py-2 rounded-full text-sm font-semibold hover:shadow-pink-glow transition-all"
         >
-          Jetzt holen
+          Get Yours
         </a>
       </div>
     </header>
@@ -72,47 +74,47 @@ function Hero() {
         aria-hidden
         width={1920}
         height={1280}
-        className="absolute inset-0 w-full h-full object-cover opacity-60"
+        className="absolute inset-0 w-full h-full object-cover opacity-55"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/70 to-background" />
 
       <div className="relative mx-auto max-w-5xl px-6 text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/30 bg-background/40 backdrop-blur-sm text-xs tracking-[0.2em] uppercase text-gold mb-8 animate-fade-up">
-          <Crown className="w-3.5 h-3.5" /> Reselling. Aber richtig.
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-pink/40 bg-background/40 backdrop-blur-sm text-xs tracking-[0.2em] uppercase text-pink mb-8 animate-fade-up">
+          <Crown className="w-3.5 h-3.5" /> Reselling. Done Right.
         </div>
 
         <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-black leading-[1.05] animate-fade-up">
-          Verdiene Geld mit
+          Make real money
           <br />
-          <span className="text-gold-gradient animate-shimmer italic">echtem Reselling.</span>
+          <span className="text-pink-silver-gradient animate-shimmer italic">with reselling.</span>
         </h1>
 
         <p className="mt-8 max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground leading-relaxed animate-fade-up">
-          60+ verifizierte Supplier. Exakte Resell-Guides in Deutsch &amp; Englisch.
-          Step-by-Step Listing-Anleitung. Plus ein kostenloser Profit Tracker.
-          Alles, was du brauchst — in einem Bundle.
+          60+ verified suppliers. Exact resell guides in English &amp; German.
+          Step-by-step listing mastery. Plus a free profit tracker.
+          Everything you need — in one bundle.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up">
           <a
-            href="#bundle"
-            className="group bg-gold-gradient text-primary-foreground px-8 py-4 rounded-full font-semibold text-base hover:shadow-gold-glow transition-all inline-flex items-center gap-2"
+            href="#bundles"
+            className="group bg-pink-gradient text-primary-foreground px-8 py-4 rounded-full font-semibold text-base hover:shadow-pink-glow transition-all inline-flex items-center gap-2"
           >
             <Sparkles className="w-4 h-4" />
-            Jetzt für 39,99 € sichern
+            See all bundles
           </a>
           <a
             href="#inside"
-            className="px-8 py-4 rounded-full font-medium text-sm text-foreground/80 border border-border hover:border-gold/60 transition"
+            className="px-8 py-4 rounded-full font-medium text-sm text-foreground/80 border border-border hover:border-pink/60 transition"
           >
-            Was ist drin? →
+            What's inside? →
           </a>
         </div>
 
         <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs text-muted-foreground">
-          <span className="flex items-center gap-1.5"><ShieldCheck className="w-4 h-4 text-gold" /> Sofortiger Zugriff</span>
-          <span className="flex items-center gap-1.5"><Globe2 className="w-4 h-4 text-gold" /> DE &amp; EN</span>
-          <span className="flex items-center gap-1.5"><Zap className="w-4 h-4 text-gold" /> Lebenslange Updates</span>
+          <span className="flex items-center gap-1.5"><ShieldCheck className="w-4 h-4 text-pink" /> Instant access</span>
+          <span className="flex items-center gap-1.5"><Globe2 className="w-4 h-4 text-pink" /> EN &amp; DE</span>
+          <span className="flex items-center gap-1.5"><Zap className="w-4 h-4 text-pink" /> Lifetime updates</span>
         </div>
       </div>
     </section>
@@ -121,9 +123,9 @@ function Hero() {
 
 function Stats() {
   const stats = [
-    { value: "60+", label: "Verifizierte Supplier" },
+    { value: "60+", label: "Verified Suppliers" },
     { value: "100%", label: "Tested & Approved" },
-    { value: "2", label: "Sprachen (DE / EN)" },
+    { value: "2", label: "Languages (EN / DE)" },
     { value: "∞", label: "Lifetime Updates" },
   ];
   return (
@@ -131,7 +133,7 @@ function Stats() {
       <div className="mx-auto max-w-6xl px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
         {stats.map((s) => (
           <div key={s.label} className="text-center">
-            <div className="font-display text-4xl md:text-5xl font-bold text-gold-gradient">{s.value}</div>
+            <div className="font-display text-4xl md:text-5xl font-bold text-pink-silver-gradient">{s.value}</div>
             <div className="mt-2 text-xs tracking-widest uppercase text-muted-foreground">{s.label}</div>
           </div>
         ))}
@@ -140,98 +142,219 @@ function Stats() {
   );
 }
 
-function Bundle() {
-  const features = [
-    "60+ verifizierte Supplier (geprüft & aktiv)",
-    "Komplette Resell-Guides — Deutsch & Englisch",
-    "1:1 Anleitung: Wie du richtig listest",
-    "Kostenloser Profit Tracker (Excel/Sheets)",
-    "Insider-Tipps für maximale Marge",
-    "Lebenslange Updates & neue Supplier",
-    "Sofortiger digitaler Download",
-    "Private Community Zugang",
-  ];
+type Bundle = {
+  id: string;
+  name: string;
+  tagline: string;
+  price: string;
+  priceCents: string;
+  oldPrice?: string;
+  badge?: string;
+  icon: typeof Rocket;
+  featured?: boolean;
+  features: string[];
+  cta: string;
+};
 
+const bundles: Bundle[] = [
+  {
+    id: "starter",
+    name: "Starter Pack",
+    tagline: "Your first step into reselling.",
+    price: "14",
+    priceCents: ",99€",
+    icon: Rocket,
+    features: [
+      "15+ verified starter suppliers",
+      "Beginner resell guide (EN)",
+      "Basic listing checklist",
+      "Instant digital download",
+    ],
+    cta: "Start for 14,99 €",
+  },
+  {
+    id: "everything",
+    name: "EVERYTHING Full Bundle",
+    tagline: "Everything you need to resell.",
+    price: "39",
+    priceCents: ",99€",
+    oldPrice: "79,99 €",
+    badge: "Most Popular",
+    icon: Crown,
+    featured: true,
+    features: [
+      "60+ verified suppliers (tested & active)",
+      "Full resell guides — English & German",
+      "1:1 walkthrough: how to list correctly",
+      "Free profit tracker (Excel / Sheets)",
+      "Insider tips for maximum margin",
+      "Lifetime updates & new suppliers",
+      "Instant digital download",
+      "Private community access",
+    ],
+    cta: "Unlock for 39,99 €",
+  },
+  {
+    id: "supplier-vault",
+    name: "Supplier Vault",
+    tagline: "Just the suppliers. No fluff.",
+    price: "24",
+    priceCents: ",99€",
+    icon: Package,
+    features: [
+      "60+ verified suppliers",
+      "EN & DE supplier sheets",
+      "Lifetime supplier updates",
+      "Instant access",
+    ],
+    cta: "Get the Vault",
+  },
+  {
+    id: "vip",
+    name: "VIP 1-on-1 Mentorship",
+    tagline: "Direct help. Personal results.",
+    price: "99",
+    priceCents: ",99€",
+    badge: "Premium",
+    icon: Gem,
+    features: [
+      "Everything in the Full Bundle",
+      "1:1 chat support with Kuxeya",
+      "Personal supplier recommendations",
+      "Listing review & feedback",
+      "Priority access to new drops",
+    ],
+    cta: "Apply for VIP",
+  },
+];
+
+function Bundles() {
   return (
-    <section id="bundle" className="relative py-28 md:py-40 scroll-mt-20">
+    <section id="bundles" className="relative py-28 md:py-36 scroll-mt-20">
       <div className="absolute inset-0 bg-[image:var(--gradient-radial)] pointer-events-none" />
-      <div className="relative mx-auto max-w-5xl px-6">
+      <div className="relative mx-auto max-w-7xl px-6">
         <div className="text-center mb-16">
-          <p className="text-xs tracking-[0.3em] uppercase text-gold mb-4">Das Flagship Bundle</p>
+          <p className="text-xs tracking-[0.3em] uppercase text-pink mb-4">Choose Your Bundle</p>
           <h2 className="font-display text-4xl md:text-6xl font-bold">
-            EVERYTHING <span className="text-gold-gradient italic">Full Bundle</span>
+            Pick your <span className="text-pink-silver-gradient italic">level.</span>
           </h2>
+          <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
+            From your first flip to full-time reseller — there's a bundle for every stage.
+          </p>
         </div>
 
-        <div className="relative group">
-          <div className="absolute -inset-1 bg-gold-gradient opacity-30 blur-2xl group-hover:opacity-50 transition-opacity rounded-3xl" />
-          <div className="relative bg-card border border-gold/30 rounded-3xl p-8 md:p-14 shadow-luxe">
-            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 mb-10">
-              <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/15 border border-gold/40 text-gold text-xs font-semibold tracking-wider uppercase mb-4">
-                  <Crown className="w-3 h-3" /> Most Popular
-                </div>
-                <h3 className="font-display text-3xl md:text-4xl font-bold">Alles, was du zum Reselln brauchst.</h3>
-                <p className="mt-3 text-muted-foreground max-w-md">
-                  Schluss mit fake Suppliern und mittelmäßigen Anleitungen. Das Komplettpaket.
-                </p>
-              </div>
-              <div className="text-left md:text-right">
-                <div className="text-xs text-muted-foreground line-through">79,99 €</div>
-                <div className="font-display text-6xl md:text-7xl font-black text-gold-gradient leading-none">
-                  39<span className="text-3xl">,99€</span>
-                </div>
-                <div className="text-xs text-muted-foreground mt-2">Einmalzahlung • Lifetime</div>
-              </div>
-            </div>
-
-            <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3 mb-10">
-              {features.map((f) => (
-                <li key={f} className="flex items-start gap-3 text-sm text-foreground/90">
-                  <Check className="w-5 h-5 text-gold shrink-0 mt-0.5" />
-                  <span>{f}</span>
-                </li>
-              ))}
-            </ul>
-
-            <button
-              type="button"
-              className="w-full bg-gold-gradient text-primary-foreground py-5 rounded-2xl font-bold text-lg hover:shadow-gold-glow transition-all inline-flex items-center justify-center gap-3"
-            >
-              <Sparkles className="w-5 h-5" />
-              Bundle für 39,99 € freischalten
-            </button>
-            <p className="text-center text-xs text-muted-foreground mt-4">
-              🔒 Sichere Bezahlung • Sofortiger Download • 100% digital
-            </p>
-          </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+          {bundles.map((b) => (
+            <BundleCard key={b.id} bundle={b} />
+          ))}
         </div>
+
+        <p className="text-center text-xs text-muted-foreground mt-10">
+          🔒 Secure payment • Instant download • 100% digital
+        </p>
       </div>
     </section>
   );
 }
 
+function BundleCard({ bundle }: { bundle: Bundle }) {
+  const Icon = bundle.icon;
+  const isFeatured = bundle.featured;
+
+  return (
+    <div className={`relative group flex ${isFeatured ? "lg:-my-4" : ""}`}>
+      {isFeatured && (
+        <div className="absolute -inset-1 bg-pink-gradient opacity-40 blur-2xl group-hover:opacity-60 transition-opacity rounded-3xl" />
+      )}
+      <div
+        className={`relative flex flex-col w-full rounded-3xl p-7 transition-all ${
+          isFeatured
+            ? "bg-card border border-pink/40 shadow-luxe"
+            : "bg-card/60 border border-border hover:border-pink/40"
+        }`}
+      >
+        {bundle.badge && (
+          <div className={`inline-flex self-start items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-semibold tracking-wider uppercase mb-4 ${
+            isFeatured
+              ? "bg-pink/15 border border-pink/40 text-pink"
+              : "bg-silver/10 border border-silver/30 text-silver"
+          }`}>
+            <Crown className="w-3 h-3" /> {bundle.badge}
+          </div>
+        )}
+
+        <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-5 ${
+          isFeatured ? "bg-pink-gradient" : "bg-pink/10 border border-pink/30"
+        }`}>
+          <Icon className={`w-5 h-5 ${isFeatured ? "text-primary-foreground" : "text-pink"}`} />
+        </div>
+
+        <h3 className="font-display text-2xl font-bold">{bundle.name}</h3>
+        <p className="mt-1.5 text-sm text-muted-foreground">{bundle.tagline}</p>
+
+        <div className="mt-5 mb-6">
+          {bundle.oldPrice && (
+            <div className="text-xs text-muted-foreground line-through">{bundle.oldPrice}</div>
+          )}
+          <div className="flex items-baseline gap-0.5">
+            <span className={`font-display text-5xl font-black leading-none ${
+              isFeatured ? "text-pink-silver-gradient" : "text-foreground"
+            }`}>
+              {bundle.price}
+            </span>
+            <span className={`text-xl font-bold ${isFeatured ? "text-pink" : "text-foreground"}`}>
+              {bundle.priceCents}
+            </span>
+          </div>
+          <div className="text-[11px] text-muted-foreground mt-1">One-time • Lifetime</div>
+        </div>
+
+        <ul className="space-y-2.5 mb-7 flex-1">
+          {bundle.features.map((f) => (
+            <li key={f} className="flex items-start gap-2.5 text-sm text-foreground/90">
+              <Check className="w-4 h-4 text-pink shrink-0 mt-0.5" />
+              <span>{f}</span>
+            </li>
+          ))}
+        </ul>
+
+        <button
+          type="button"
+          className={`w-full py-3.5 rounded-xl font-semibold text-sm transition-all inline-flex items-center justify-center gap-2 ${
+            isFeatured
+              ? "bg-pink-gradient text-primary-foreground hover:shadow-pink-glow"
+              : "bg-foreground/5 border border-border text-foreground hover:border-pink hover:bg-pink/10"
+          }`}
+        >
+          <Sparkles className="w-4 h-4" />
+          {bundle.cta}
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function Inside() {
   const items = [
-    { icon: Package, title: "Supplier Vault", desc: "Über 60 handverlesene & verifizierte Lieferanten — keine Fakes, nur echte Quellen." },
-    { icon: TrendingUp, title: "Profit Tracker", desc: "Behalte jeden Euro im Blick. Vorgefertigte Sheets, sofort einsatzbereit." },
-    { icon: Globe2, title: "Resell Guides DE/EN", desc: "Step-by-Step Anleitungen in beiden Sprachen — vom Einkauf bis zum Verkauf." },
-    { icon: Truck, title: "Listing Mastery", desc: "1:1 Walkthrough, wie du Produkte richtig listest und schneller verkaufst." },
-    { icon: ShieldCheck, title: "Insider Tipps", desc: "Wissen, das normalerweise nur in privaten Discord-Channels bleibt." },
-    { icon: Zap, title: "Lifetime Updates", desc: "Neue Supplier, neue Strategien — du bekommst alles automatisch." },
+    { icon: Package, title: "Supplier Vault", desc: "Over 60 hand-picked & verified suppliers — no fakes, only real sources." },
+    { icon: TrendingUp, title: "Profit Tracker", desc: "Keep an eye on every euro. Pre-built sheets, ready to use." },
+    { icon: Globe2, title: "Resell Guides EN/DE", desc: "Step-by-step guides in both languages — from sourcing to selling." },
+    { icon: Truck, title: "Listing Mastery", desc: "1:1 walkthrough on how to list products correctly and sell faster." },
+    { icon: ShieldCheck, title: "Insider Tips", desc: "Knowledge that normally stays inside private Discord channels." },
+    { icon: Zap, title: "Lifetime Updates", desc: "New suppliers, new strategies — you get everything automatically." },
   ];
   return (
     <section id="inside" className="py-28 scroll-mt-20">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center mb-16">
-          <p className="text-xs tracking-[0.3em] uppercase text-gold mb-4">Was du bekommst</p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold">Ein Bundle. <span className="text-gold-gradient italic">Alles drin.</span></h2>
+          <p className="text-xs tracking-[0.3em] uppercase text-pink mb-4">What You Get</p>
+          <h2 className="font-display text-4xl md:text-5xl font-bold">One bundle. <span className="text-pink-silver-gradient italic">Everything in.</span></h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map(({ icon: Icon, title, desc }) => (
-            <div key={title} className="group relative p-8 rounded-2xl bg-card border border-border hover:border-gold/50 transition-all">
-              <div className="w-12 h-12 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center mb-5 group-hover:bg-gold/20 transition">
-                <Icon className="w-5 h-5 text-gold" />
+            <div key={title} className="group relative p-8 rounded-2xl bg-card border border-border hover:border-pink/50 transition-all">
+              <div className="w-12 h-12 rounded-xl bg-pink/10 border border-pink/30 flex items-center justify-center mb-5 group-hover:bg-pink/20 transition">
+                <Icon className="w-5 h-5 text-pink" />
               </div>
               <h3 className="font-display text-xl font-bold mb-2">{title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
@@ -245,21 +368,21 @@ function Inside() {
 
 function Testimonials() {
   const reviews = [
-    { name: "Leon M.", text: "Hab in 2 Wochen den Preis 5x wieder reingeholt. Die Supplier sind Gold wert.", rating: 5 },
-    { name: "Sara K.", text: "Endlich kein Rätselraten mehr. Der Profit Tracker allein ist das Geld wert.", rating: 5 },
-    { name: "Marvin B.", text: "Beste Investition als Anfänger. Die DE Guides sind super easy zu folgen.", rating: 5 },
+    { name: "Leon M.", text: "Made 5x my money back in 2 weeks. The suppliers are pure gold.", rating: 5 },
+    { name: "Sara K.", text: "No more guessing. The profit tracker alone is worth the price.", rating: 5 },
+    { name: "Marvin B.", text: "Best investment as a beginner. The guides are super easy to follow.", rating: 5 },
   ];
   return (
     <section className="py-28 bg-card/30 border-y border-border">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center mb-16">
-          <p className="text-xs tracking-[0.3em] uppercase text-gold mb-4">Echte Reseller</p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold">Sie haben's <span className="text-gold-gradient italic">geschafft.</span></h2>
+          <p className="text-xs tracking-[0.3em] uppercase text-pink mb-4">Real Resellers</p>
+          <h2 className="font-display text-4xl md:text-5xl font-bold">They <span className="text-pink-silver-gradient italic">made it.</span></h2>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {reviews.map((r) => (
             <div key={r.name} className="p-8 rounded-2xl bg-background border border-border">
-              <div className="flex gap-1 mb-4 text-gold">
+              <div className="flex gap-1 mb-4 text-pink">
                 {Array.from({ length: r.rating }).map((_, i) => <span key={i}>★</span>)}
               </div>
               <p className="text-foreground/90 leading-relaxed mb-6">"{r.text}"</p>
@@ -274,24 +397,24 @@ function Testimonials() {
 
 function FAQ() {
   const faqs = [
-    { q: "Was bekomme ich genau?", a: "Du bekommst direkten Zugriff auf 60+ verifizierte Supplier, komplette Resell-Guides auf Deutsch und Englisch, eine 1:1 Listing-Anleitung sowie einen kostenlosen Profit Tracker. Plus lebenslange Updates." },
-    { q: "Ist das für Anfänger geeignet?", a: "Absolut. Die Guides sind step-by-step aufgebaut und führen dich von Null bis zum ersten Verkauf." },
-    { q: "Wie schnell bekomme ich Zugriff?", a: "Sofort nach Zahlung. Du erhältst per E-Mail den Link zum gesamten Bundle." },
-    { q: "Gibt es eine Geld-zurück-Garantie?", a: "Da es sich um digitale Produkte mit sofortigem Zugriff handelt, sind alle Verkäufe final." },
+    { q: "What exactly do I get?", a: "You get direct access to 60+ verified suppliers, full resell guides in English and German, a 1:1 listing walkthrough and a free profit tracker. Plus lifetime updates." },
+    { q: "Is this beginner friendly?", a: "Absolutely. The guides are built step by step and take you from zero to your first sale." },
+    { q: "How fast do I get access?", a: "Instantly after payment. You receive the link to the full bundle via email." },
+    { q: "Is there a refund policy?", a: "Because these are digital products with instant access, all sales are final." },
   ];
   return (
     <section id="faq" className="py-28 scroll-mt-20">
       <div className="mx-auto max-w-3xl px-6">
         <div className="text-center mb-12">
-          <p className="text-xs tracking-[0.3em] uppercase text-gold mb-4">FAQ</p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold">Häufige <span className="text-gold-gradient italic">Fragen</span></h2>
+          <p className="text-xs tracking-[0.3em] uppercase text-pink mb-4">FAQ</p>
+          <h2 className="font-display text-4xl md:text-5xl font-bold">Common <span className="text-pink-silver-gradient italic">questions</span></h2>
         </div>
         <div className="space-y-3">
           {faqs.map((f) => (
-            <details key={f.q} className="group rounded-xl bg-card border border-border p-6 hover:border-gold/40 transition">
+            <details key={f.q} className="group rounded-xl bg-card border border-border p-6 hover:border-pink/40 transition">
               <summary className="cursor-pointer font-semibold flex justify-between items-center list-none">
                 {f.q}
-                <span className="text-gold text-2xl group-open:rotate-45 transition-transform">+</span>
+                <span className="text-pink text-2xl group-open:rotate-45 transition-transform">+</span>
               </summary>
               <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{f.a}</p>
             </details>
@@ -306,12 +429,12 @@ function Footer() {
   return (
     <footer className="border-t border-border py-12 bg-background">
       <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="flex items-center gap-2">
-          <img src={logo} alt="Kuxea" className="h-8 w-8 object-contain" width={32} height={32} loading="lazy" />
-          <span className="font-display text-gold-gradient">KUXEA RESELLING</span>
+        <div className="flex items-center gap-2.5">
+          <img src={logo} alt="Kuxeya Reselling" className="h-9 w-9 object-contain rounded-full" width={36} height={36} loading="lazy" />
+          <span className="font-display text-pink-silver-gradient font-bold">KUXEYA RESELLING</span>
         </div>
         <p className="text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Kuxea Reselling. Folge mir auf TikTok @kuxea.reselling
+          © {new Date().getFullYear()} Kuxeya Reselling. Follow on TikTok @kuxeya.reselling
         </p>
       </div>
     </footer>

@@ -32,7 +32,6 @@ function Landing() {
       <Stats />
       <Bundles />
       <Inside />
-      <Testimonials />
       <FAQ />
       <Footer />
     </div>

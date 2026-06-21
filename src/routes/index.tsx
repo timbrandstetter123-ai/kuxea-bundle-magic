@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Check, Crown, Package, ShieldCheck, Sparkles, TrendingUp, Truck, Globe2, Zap, Rocket } from "lucide-react";
+import { Check, Crown, Package, ShieldCheck, Sparkles, TrendingUp, Truck, Globe2, Zap } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import logoAsset from "@/assets/kuxeya-logo.png.asset.json";
 
@@ -149,7 +149,7 @@ type Bundle = {
   priceCents: string;
   oldPrice?: string;
   badge?: string;
-  icon: typeof Rocket;
+  icon: typeof Crown;
   featured?: boolean;
   features: string[];
   cta: string;
@@ -157,26 +157,11 @@ type Bundle = {
 
 const bundles: Bundle[] = [
   {
-    id: "resell-guide",
-    name: "Resell Guide",
-    tagline: "Just the guide. Pure knowledge.",
-    price: "6",
-    priceCents: ",99€",
-    icon: Rocket,
-    features: [
-      "Complete reselling guide (EN)",
-      "From sourcing to first sale",
-      "Mindset & pricing basics",
-      "Instant digital download",
-    ],
-    cta: "Get the Guide",
-  },
-  {
     id: "guide-tracker",
     name: "1-on-1 Reseller Guide + Profit Tracker",
     tagline: "The full guide in EN & DE — plus tracking.",
-    price: "9",
-    priceCents: ",96€",
+    price: "6",
+    priceCents: ",99€",
     icon: TrendingUp,
     features: [
       "1:1 reseller guide in English & German",
@@ -187,6 +172,7 @@ const bundles: Bundle[] = [
     ],
     cta: "Get Guide + Tracker",
   },
+
   {
     id: "asics-supplier",
     name: "Asics Supplier",
@@ -235,7 +221,7 @@ const bundles: Bundle[] = [
   {
     id: "supplier-vault",
     name: "Supplier Vault",
-    tagline: "All suppliers in one place. No fluff.",
+    tagline: "Every supplier I got — all in one place.",
     price: "19",
     priceCents: ",99€",
     icon: Package,

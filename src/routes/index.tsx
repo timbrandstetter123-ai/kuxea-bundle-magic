@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, Crown, Package, ShieldCheck, Sparkles, TrendingUp, Truck, Globe2, Zap } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import logoAsset from "@/assets/kuxeya-logo.png.asset.json";
@@ -437,9 +437,10 @@ function Footer() {
           <img src={logo} alt="Kuxeya Reselling" className="h-9 w-9 object-contain rounded-full" width={36} height={36} loading="lazy" />
           <span className="font-display text-pink-silver-gradient font-bold">KUXEYA RESELLING</span>
         </div>
-        <p className="text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Kuxeya Reselling. Follow on TikTok @kuxeya.reselling
-        </p>
+        <div className="flex items-center gap-6 text-xs text-muted-foreground">
+          <Link to="/impressum" className="hover:text-pink transition">Impressum</Link>
+          <span>© {new Date().getFullYear()} Kuxeya Reselling · TikTok @kuxeya.reselling</span>
+        </div>
       </div>
     </footer>
   );

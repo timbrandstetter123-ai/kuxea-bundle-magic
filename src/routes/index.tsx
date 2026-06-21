@@ -149,7 +149,7 @@ type Bundle = {
   priceCents: string;
   oldPrice?: string;
   badge?: string;
-  icon: typeof Rocket;
+  icon: typeof Crown;
   featured?: boolean;
   features: string[];
   cta: string;

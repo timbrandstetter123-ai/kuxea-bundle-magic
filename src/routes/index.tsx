@@ -160,7 +160,7 @@ const bundles: Bundle[] = [
     id: "resell-guide",
     name: "Resell Guide",
     tagline: "Just the guide. Pure knowledge.",
-    price: "5",
+    price: "6",
     priceCents: ",99€",
     icon: Rocket,
     features: [

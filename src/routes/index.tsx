@@ -491,7 +491,7 @@ function Landing() {
               Ready to make your <span className="pink-silver italic">first flip?</span>
             </h2>
             <p>Grab the full bundle and get every supplier, guide and tracker — instantly.</p>
-            <a href="#bundles" className="btn btn-primary final-btn">
+            <a href="/downloads" className="btn btn-primary final-btn">
               ✦ Get the EVERYTHING bundle — 29,99 €
             </a>
           </div>

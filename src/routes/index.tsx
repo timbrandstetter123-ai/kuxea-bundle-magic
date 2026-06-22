@@ -401,7 +401,7 @@ function Landing() {
                       </li>
                     ))}
                   </ul>
-                  <a href="#" className="btn btn-card">
+                  <a href="/downloads" className="btn btn-card">
                     {b.button}
                   </a>
                 </div>

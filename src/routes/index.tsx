@@ -167,6 +167,46 @@ const bundles: Bundle[] = [
     ],
     button: "Unlock Perfume",
   },
+  {
+    icon: Mountain,
+    title: "Arc'teryx Supplier",
+    tag: "Verified sources for Arc'teryx gear.",
+    num: "6",
+    features: [
+      "Verified Arc'teryx suppliers",
+      "Tested & active sources",
+      "EN & DE sheets",
+      "Instant access",
+    ],
+    button: "Unlock Arc'teryx",
+  },
+  {
+    icon: Footprints,
+    title: "Football Boots Supplier",
+    tag: "Verified sources for every football boot.",
+    num: "6",
+    features: [
+      "Verified football boot suppliers",
+      "Nike, Adidas, Puma & more",
+      "EN & DE sheets",
+      "Instant access",
+    ],
+    button: "Unlock Football Boots",
+  },
+  {
+    icon: Gem,
+    title: "Premium Supplier",
+    tag: "Luxury brands — Louis Vuitton, Balenciaga, Goyard & more.",
+    num: "12",
+    features: [
+      "Verified premium & luxury suppliers",
+      "Louis Vuitton, Balenciaga, Goyard, Dior & more",
+      "Tested & active sources",
+      "EN & DE sheets",
+      "Instant access",
+    ],
+    button: "Unlock Premium",
+  },
 ];
 
 const featuredFeatures = [
